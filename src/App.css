@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+* {
+    padding: 0;
+    margin: 0;
+}
+.app {
+    font-size: 16px;
+    max-width: 500px;
+    background-color: #5e6bc5;
+    margin: auto;
+    padding: 20px 10px;
+    box-shadow: 0px 0px 5px #5e6bc5;
+}
+h1 {
+    font-size: 25px;
+    margin: 0 0 20px 0;
+    color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+    list-style: none;
+    background: white;
+    margin-bottom: 10px;
+    padding: 15px 5px;
+    border-radius: 5px;
+    position: relative;
+}
+label {
+    margin-left: 30px;
+    color: #383636;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* css TaskList */
+.tasksList {
+    color: red;
+}
+.tasksList .taskItem .desTroy {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    margin: auto 0;
+    font-size: 30px;
+    color: #cc9a9a;
+    transition: color 0.2s ease-out;
+    background: none;
+    border: none;
+    opacity: 0;
+    cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.tasksList .taskItem .desTroy:after {
+    content: "×";
+}
+.taskItem:hover .desTroy {
+    opacity: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.toggle {
+    height: 20px;
+    width: 20px;
+    background: none;
+    opacity: 1;
+    text-align: center;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border: 1px solid #9a9797;
+    appearance: none;
+    cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.toggle:focus,
+.tasksList .taskItem .desTroy {
+    outline: none;
+}
+.toggle:checked::after {
+    content: "✓";
+    color: #fff;
+    font-size: 16px;
+}
+.toggle:checked {
+    background-color: #5e6bc5;
+    border: 1px solid #5e6bc5;
+}
+.toggle:checked + label {
+    text-decoration: line-through;
+    color: #968888;
 }
