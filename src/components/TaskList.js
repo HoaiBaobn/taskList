@@ -1,39 +1,17 @@
-const TaskList = () => {
+import { StarOutlined } from "@ant-design/icons";
+
+const TaskList = ({ products }) => {
     return (
         <ul className="tasksList">
             <li className="taskItem">
                 <div className="view">
-                    <input className="toggle" type="checkbox" />
-                    <label>Nho Mỹ 2kg</label>
-                    <button className="desTroy"></button>
-                </div>
-            </li>
-            <li className="taskItem">
-                <div className="view">
-                    <input className="toggle" type="checkbox" />
-                    <label>Kiwi 2kg</label>
-                    <button className="desTroy"></button>
-                </div>
-            </li>
-            <li className="taskItem">
-                <div className="view">
-                    <input className="toggle" type="checkbox" />
-                    <label>Mít 2kg</label>
-                    <button className="desTroy"></button>
-                </div>
-            </li>
-            <li className="taskItem">
-                <div className="view">
-                    <input className="toggle" type="checkbox" />
-                    <label>Sầu riêng 2kg</label>
-                    <button className="desTroy"></button>
-                </div>
-            </li>
-            <li className="taskItem">
-                <div className="view">
-                    <input className="toggle" type="checkbox" />
-                    <label>Táo Mỹ 2kg</label>
-                    <button className="desTroy"></button>
+                    <div>
+                        <input className="toggle" type="checkbox" />
+                        <label>{products.name}</label>
+                    </div>
+                    <button className="desTroy">
+                        <StarOutlined />
+                    </button>
                 </div>
             </li>
         </ul>

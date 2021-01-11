@@ -1,4 +1,5 @@
 import classes from "./TaskCompleted.module.css";
+import { StarOutlined } from "@ant-design/icons";
 
 const TaskCompleted = () => {
     return (
@@ -12,36 +13,57 @@ const TaskCompleted = () => {
             <ul className="tasksList">
                 <li className="taskItem">
                     <div className="view">
-                        <input className="toggle" type="checkbox" checked />
-                        <label className={classes.TaskCompleted}>
-                            Cà rốt 2kg
-                        </label>
-                        <button className="desTroy"></button>
+                        <div>
+                            <input className="toggle" type="checkbox" checked />
+                            <label className={classes.TaskCompleted}>
+                                Cà rốt 2kg
+                            </label>
+                        </div>
+
+                        <button className="desTroy">
+                            <StarOutlined />
+                        </button>
                     </div>
                 </li>
                 <li className="taskItem">
                     <div className="view">
-                        <input className="toggle" type="checkbox" checked />
-                        <label className={classes.TaskCompleted}>Táo 2kg</label>
-                        <button className="desTroy"></button>
+                        <div>
+                            <input className="toggle" type="checkbox" checked />
+                            <label className={classes.TaskCompleted}>
+                                Táo 2kg
+                            </label>
+                        </div>
+
+                        <button className="desTroy">
+                            <StarOutlined />
+                        </button>
                     </div>
                 </li>
                 <li className="taskItem">
                     <div className="view">
-                        <input className="toggle" type="checkbox" checked />
-                        <label className={classes.TaskCompleted}>
-                            Cà Chua 1kg
-                        </label>
-                        <button className="desTroy"></button>
+                        <div>
+                            <input className="toggle" type="checkbox" checked />
+                            <label className={classes.TaskCompleted}>
+                                Cà Chua 1kg
+                            </label>
+                        </div>
+                        <button className="desTroy">
+                            <StarOutlined />
+                        </button>
                     </div>
                 </li>
                 <li className="taskItem">
                     <div className="view">
-                        <input className="toggle" type="checkbox" checked />
-                        <label className={classes.TaskCompleted}>
-                            Hành tây 1 củ
-                        </label>
-                        <button className="desTroy"></button>
+                        <div>
+                            <input className="toggle" type="checkbox" checked />
+                            <label className={classes.TaskCompleted}>
+                                Hành tây 1 củ
+                            </label>
+                        </div>
+
+                        <button className="desTroy">
+                            <StarOutlined />
+                        </button>
                     </div>
                 </li>
             </ul>
