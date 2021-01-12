@@ -1,27 +1,21 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 
 const TaskHeader = memo((props) => {
-    const [text, setText] = useState("");
-    const { addtask } = props;
-    const onAddTask = (e) => {
-        addtask({
-            id: new Date().getTime(),
-            name: text,
-            isCompleted: false,
-        });
-        setText("");
-    };
+    const { onAddTask, text, addTasks } = props;
 
     return (
         <header className="header">
             <h1>Tasks</h1>
-            <input
-                type="text"
-                className="new-task"
-                placeholder="What needs to be done?"
-                onChange={(e) => setText(e.target.value)}
-            />
-            <span onClick={(e) => onAddTask()}>+</span>
+            <div className="addTask">
+                <input
+                    type="text"
+                    value={text}
+                    className="new-task"
+                    placeholder="What needs to be done?"
+                    onChange={(e) => addTasks(e.target.value)}
+                />
+                <span onClick={() => onAddTask()}>+</span>
+            </div>
         </header>
     );
 });

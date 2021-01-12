@@ -1,17 +1,20 @@
 import { StarOutlined } from "@ant-design/icons";
 
-const TaskList = ({ products }) => {
+const TaskList = ({ products, incompleteItems, maskTaskCompleted }) => {
     return (
         <ul className="tasksList">
-            <li className="taskItem">
-                <div className="view">
-                    <div>
-                        <input className="toggle" type="checkbox" />
+            <li key={products.id}>
+                <div className="taskItem addTask">
+                    <div className="view">
+                        <input
+                            className="toggle"
+                            name={products.item}
+                            type="checkbox"
+                            onClick={() => maskTaskCompleted(products.id)}
+                        />
                         <label>{products.name}</label>
                     </div>
-                    <button className="desTroy">
-                        <StarOutlined />
-                    </button>
+                    {<StarOutlined />}
                 </div>
             </li>
         </ul>

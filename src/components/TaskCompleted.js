@@ -1,7 +1,12 @@
 import classes from "./TaskCompleted.module.css";
 import { StarOutlined } from "@ant-design/icons";
 
-const TaskCompleted = () => {
+const TaskCompleted = ({
+    completeItems,
+    maskTasUncompleted,
+    checked,
+    products,
+}) => {
     return (
         <div className={classes.Completed}>
             <div className={classes.Title}>
@@ -10,62 +15,31 @@ const TaskCompleted = () => {
                 <span>Completed</span>
                 <span className={classes.TaskCompleteTotal}>4</span>
             </div>
+
             <ul className="tasksList">
-                <li className="taskItem">
-                    <div className="view">
-                        <div>
-                            <input className="toggle" type="checkbox" checked />
-                            <label className={classes.TaskCompleted}>
-                                Cà rốt 2kg
-                            </label>
-                        </div>
-
-                        <button className="desTroy">
-                            <StarOutlined />
-                        </button>
-                    </div>
-                </li>
-                <li className="taskItem">
-                    <div className="view">
-                        <div>
-                            <input className="toggle" type="checkbox" checked />
-                            <label className={classes.TaskCompleted}>
-                                Táo 2kg
-                            </label>
-                        </div>
-
-                        <button className="desTroy">
-                            <StarOutlined />
-                        </button>
-                    </div>
-                </li>
-                <li className="taskItem">
-                    <div className="view">
-                        <div>
-                            <input className="toggle" type="checkbox" checked />
-                            <label className={classes.TaskCompleted}>
-                                Cà Chua 1kg
-                            </label>
-                        </div>
-                        <button className="desTroy">
-                            <StarOutlined />
-                        </button>
-                    </div>
-                </li>
-                <li className="taskItem">
-                    <div className="view">
-                        <div>
-                            <input className="toggle" type="checkbox" checked />
-                            <label className={classes.TaskCompleted}>
-                                Hành tây 1 củ
-                            </label>
-                        </div>
-
-                        <button className="desTroy">
-                            <StarOutlined />
-                        </button>
-                    </div>
-                </li>
+                {completeItems.map((tasks) => {
+                    return (
+                        <li key={tasks.id} className="taskItem">
+                            <div className="view">
+                                <div>
+                                    <input
+                                        className="toggle"
+                                        name={tasks.item}
+                                        type="checkbox"
+                                        defaultChecked={
+                                            tasks.isCompleted ? checked : ""
+                                        }
+                                        onClick={() =>
+                                            maskTasUncompleted(tasks.id)
+                                        }
+                                    />
+                                    <label>{tasks.name}</label>
+                                </div>
+                                <StarOutlined />
+                            </div>
+                        </li>
+                    );
+                })}
             </ul>
         </div>
     );

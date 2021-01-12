@@ -10,20 +10,36 @@
     padding: 20px 10px;
     box-shadow: 0px 0px 5px #5e6bc5;
 }
+.header {
+    margin-bottom: 30px;
+}
 .new-task {
     width: calc(100% - 40px);
     height: 45px;
     border-radius: 5px;
-    margin-bottom: 30px;
     padding: 0 20px;
     border: 0;
+}
+.addTask span {
+    position: absolute;
+    right: 11px;
+    top: 43%;
+    color: #b33e3e;
+    transform: translateY(-50%);
+    font-size: 25px;
+    line-height: 25px;
+    height: 25px;
 }
 h1 {
     font-size: 25px;
     margin: 0 0 20px 0;
     color: white;
 }
-
+.addTask {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
 li {
     list-style: none;
     background: white;
