@@ -54,7 +54,6 @@ function App() {
                     key={product.name}
                     products={product}
                     maskTaskCompleted={maskTaskCompleted}
-                    incompleteItems={incompleteItems}
                 />
             ))}
 

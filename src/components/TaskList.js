@@ -1,6 +1,6 @@
 import { StarOutlined } from "@ant-design/icons";
 
-const TaskList = ({ products, incompleteItems, maskTaskCompleted }) => {
+const TaskList = ({ products, maskTaskCompleted }) => {
     return (
         <ul className="tasksList">
             <li key={products.id}>

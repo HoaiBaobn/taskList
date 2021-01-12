@@ -1,12 +1,7 @@
 import classes from "./TaskCompleted.module.css";
 import { StarOutlined } from "@ant-design/icons";
 
-const TaskCompleted = ({
-    completeItems,
-    maskTasUncompleted,
-    checked,
-    products,
-}) => {
+const TaskCompleted = ({ completeItems, maskTasUncompleted, checked }) => {
     return (
         <div className={classes.Completed}>
             <div className={classes.Title}>
@@ -17,23 +12,23 @@ const TaskCompleted = ({
             </div>
 
             <ul className="tasksList">
-                {completeItems.map((tasks) => {
+                {completeItems.map((task) => {
                     return (
-                        <li key={tasks.id} className="taskItem">
+                        <li key={task.id} className="taskItem">
                             <div className="view">
                                 <div>
                                     <input
                                         className="toggle"
-                                        name={tasks.item}
+                                        name={task.item}
                                         type="checkbox"
                                         defaultChecked={
-                                            tasks.isCompleted ? checked : ""
+                                            task.isCompleted ? checked : ""
                                         }
                                         onClick={() =>
-                                            maskTasUncompleted(tasks.id)
+                                            maskTasUncompleted(task.id)
                                         }
                                     />
-                                    <label>{tasks.name}</label>
+                                    <label>{task.name}</label>
                                 </div>
                                 <StarOutlined />
                             </div>
